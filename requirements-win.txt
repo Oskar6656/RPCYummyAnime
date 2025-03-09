@@ -1,0 +1,12 @@
+certifi==2025.1.31
+charset-normalizer==3.4.1
+idna==3.10
+pillow==11.1.0
+PyGetWindow==0.0.9
+pypresence @ git+https://github.com/Oskar6656/pypresence_fixed.git@71bb87b5144728004e52db3620f497fc057f5e70
+PyRect==0.2.0
+pystray==0.19.5
+PyYAML==6.0.2
+requests==2.32.3
+six==1.17.0
+urllib3==2.3.0

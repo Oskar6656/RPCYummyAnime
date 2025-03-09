@@ -1,0 +1,2 @@
+2025-03-09 23:50:58,124 - INFO - Программа запущена
+2025-03-09 23:50:58,138 - INFO - tab: None, previous_tab: None, is_active: False, site_found: False, client: None
