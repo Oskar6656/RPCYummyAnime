@@ -1,4 +1,4 @@
-# DiscordYummyRPC
+  # RPCYummyAnime
 
 ## О программе
 **RPCYummyAnime** – это утилита, позволяющая отображать Вашу активность с сайта [YummyAnime](https://yummy-anime.ru/) в профиле Discord.
