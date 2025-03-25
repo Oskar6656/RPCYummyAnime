@@ -13,6 +13,7 @@ from rpc_func import *
 from save_log import *
 from config_op import *
 
+
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 if sys.platform == "darwin":  # macOS
@@ -154,8 +155,10 @@ async def main():
     create_tray_icon()
 
 
+
 # Точка входа
 if __name__ == "__main__":
     logging.info("Программа запущена")
+    register_device()
     check_logs()
     asyncio.run(main())

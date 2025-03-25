@@ -1,5 +1,6 @@
 import os
 import sys
+import uuid
 import requests
 from PIL import Image
 from save_log import logging
@@ -19,7 +20,8 @@ try:
         "Expires": "0"  # Устанавливаем время истечения как 0
     }
     
-    response = requests.get(f"{rpc_api_server_url}/api/get_program_data", headers=headers)
+    url = f"{rpc_api_server_url}/api/get_program_data"
+    response = requests.get(url, headers=headers)
     response.raise_for_status()
     data = response.json()
 
@@ -86,3 +88,15 @@ def get_rpc_data_from_server(tab: str):
         return {'error': f'Error during the request: {str(e)}'}
 
 
+def register_device():
+    mac = ':'.join(f'{(uuid.getnode() >> i) & 0xFF:02x}' for i in range(0, 48, 8)[::-1])
+    url = f"{rpc_api_server_url}/api/register-device"
+    payload = {"mac_address": mac}
+    try:
+        response = requests.post(url, json=payload)
+        if response.status_code == 200:
+            logging.info("Устройство успешно зарегистрировано.")
+        else:
+            logging.warning(f"Сервер ответил с кодом {response.status_code}: {response.text}")
+    except requests.RequestException as e:
+        logging.error(f"Ошибка при запросе: {e}")
