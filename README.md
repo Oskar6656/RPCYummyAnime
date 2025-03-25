@@ -34,7 +34,35 @@ pip install -r requirements-mac.txt
 pip install -r requirements-win.txt
 ```
 
-**Требуемая версия Python:** 3.10.16
+## Сборка исполняемых файлов (.exe и .app)
+Для создания исполняемых файлов используется PyInstaller. Установите его перед сборкой:
+
+```bash
+pip install pyinstaller
+```
+После установки запустите соответствующий скрипт для сборки:
+
+### Windows
+Запустите сборку
+
+```powershell
+build.bat
+```
+
+### macOS
+1. Сделайте файл исполняемым
+
+```bash
+chmod +x build.sh
+```
+
+2. Запустите сборку
+
+```bash
+./build.sh
+```
+
+**Требуемая версия Python:** 3.10
 
 ## Лицензия
 MIT License
